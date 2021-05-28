@@ -1,20 +1,17 @@
 var validated; 
 
 document.getElementById('cardNum').addEventListener('keyup', function(event){
-  event.preventDefault();
   this.value = this.value.replace(/[^\d]/g, '').match(/.{1,4}/g);
   this.value =  this.value.replace(/,/g, ' '); 
   checkPaySystem(this.value[0]);
 });
 
 document.getElementById('name').addEventListener('keyup', function(event){
-  event.preventDefault();
   this.value = this.value.replace(/[^a-z\s]+/ig, '');
   this.value = this.value.toUpperCase();
 });
 
 document.getElementById('cvv').addEventListener('keyup', function(event){
-  event.preventDefault();
   this.value = this.value.replace(/[^\d]/g, '');
 });
 
