@@ -48,12 +48,12 @@ document.getElementById('form').addEventListener('submit', function(e){
 //функция проверки срока действия карты
 function validate() { 
 
-var inputMonth = document.getElementById("exMM").value;
-var inputYear = document.getElementById("exYY").value;
+let inputMonth = document.getElementById("exMM").value;
+let inputYear = document.getElementById("exYY").value;
 
-var today = new Date(); 
-var year = today.getFullYear() % 100; 
-var month = today.getUTCMonth() + 1;  
+let today = new Date(); 
+let year = today.getFullYear() % 100; 
+let month = today.getUTCMonth() + 1;  
 
 if (month < 10) { 
    month = '0' + month;
