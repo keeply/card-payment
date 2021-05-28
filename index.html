@@ -1,0 +1,95 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card payment form</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <form id="form" action="#" method="post" >
+      <div class="container">
+        <div class="container__header">
+          <h1>Card payment form</h1>
+        </div>
+
+        <div class="container__card front">
+          <div class="pay-system" id="pay-sys"></div>
+          <div class="card-number">
+            <label name="cardNumLabel" for="cardNumber">Card Number</label>
+            <input
+              type="text"
+              id="cardNum"
+              name="cardNumber"
+              minlength="16"
+              maxlength="19"
+              placeholder="XXXX XXXX XXXX XXXX"
+              required
+            />
+          </div>
+          <div class="card-holder">
+            <label for="Name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="Name"
+              placeholder="JAMES BOND"
+              required
+            />
+          </div>
+          <div class="expiry">
+            <label for="exMM" id="exLabel">Expiry date</label>
+            <select name="exMM" id="exMM" required>
+              <option value="expirationMonth" disabled selected>M</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <select name="exYY" id="exYY" required>
+              <option value="expirationYear" disabled selected>Y</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+          </div>
+        </div>
+        <div class="container__card back">
+          <div class="cvv">
+            <label for="CVV">CVV/CVC</label>
+            <input
+              type="password"
+              id="cvv"
+              name="CVV"
+              placeholder="007"
+              pattern="[0-9]{3}"
+              minlength="3"
+              maxlength="3"
+              required
+            />
+          </div>
+        </div>
+        <div class="container__submit-form">
+          <input id="pay-button" type="submit" value="Pay" >
+        </div>
+      </div>
+    </form>
+    <script src="js/script.js"></script>
+  </body>
+</html>

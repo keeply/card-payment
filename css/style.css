@@ -1,0 +1,347 @@
+/* обнуление */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input::-ms-clear {
+  display: none;
+} /* убирает крестик в input в IE */
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+} /* Убирает лишние пробелы в кнопках в Firefox */
+a,
+a:visited {
+  text-decoration: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Основные стили */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fdb827;
+  color: black;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+input {
+  display: block;
+  padding: 5px;
+  margin: 0 0 3px 10px;
+}
+
+input[type=text] {
+  font-size: 80%;
+  min-width: 0;
+}
+
+input[type=password]{
+  font-size: 80%;
+  min-width: 0;
+}
+
+label {
+  display: block;
+  margin: 0 0 5px 10px;
+}
+
+select {
+  color: black;
+  font-size: 1rem;
+  padding: 4px 2px 4px 0;
+  margin: 2px 6px 5px 0;
+}
+
+.container {
+  width: 100%;
+  min-width: 226px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 120px 120px 120px 120px 1fr;
+  grid-template-rows: 1fr 80px 80px 80px 80px 1fr;
+}
+
+.container__header {
+  grid-row-start: 1;
+  grid-column: 1 / span 6;
+  padding: 30px 0 30px 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.container__card {
+  background-color: #01a9b4;
+  box-shadow: 0 0 8px black;
+  border: none;
+  border-radius: 10px;
+  color: black;
+}
+
+/* стили для фронтальной части карты */
+.front {
+  width: 100%;
+  z-index: 2;
+  grid-row: 2 / span 3;
+  grid-column: 2 / span 3;
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 80px 80px 80px;
+}
+
+.pay-system {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 30px 0;
+}
+
+.mir {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/b/b9/Mir-logo.SVG.svg") center /50px 30px no-repeat;
+}
+
+.maestro {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Maestro_logo.svg/1280px-Maestro_logo.svg.png") center /50px 30px no-repeat;
+}
+
+.visa {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/320px-Old_Visa_Logo.svg.png") center /50px 30px no-repeat;
+}
+
+.mastercard {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/320px-Mastercard_2019_logo.svg.png") center /50px 30px no-repeat;
+}
+
+.card-number {
+  grid-column: 1 / span 3;
+  grid-row: 2 / span 1;
+  align-self: center;
+}
+
+.card-holder {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+  align-self: center;
+}
+
+#cardNum {
+  width: 90%;
+}
+
+#name {
+  width: 90%;
+}
+
+.expiry {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  align-self: center;
+  justify-self: start;
+}
+
+#exLabel {
+  margin-left: 0;
+}
+
+#exMM,
+#exYY {
+  width: 40%;
+}
+
+/* стили для обратной части карты */
+.back {
+  width: 100%;
+  z-index: 1;
+  grid-row: 3 / span 3;
+  grid-column: 3 / span 3;
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 80px 80px 80px;
+}
+
+.cvv {
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  align-self: end;
+  justify-self: start;
+}
+
+#cvv {
+  width: 50%;
+}
+
+/* стили кнопки оплаты */
+.container__submit-form {
+  grid-row-start: 6 / span 1;
+  grid-column: 2 / span 4;
+  align-self: center;
+  justify-self: center;
+}
+
+#pay-button {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+	font-weight: 500;
+	font-size: 20px;
+  padding: 0px 40px;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+	height: 47px;
+	box-shadow: 0 0 8px black;
+  border: none;
+  display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: background-color 0.3s ease 0s;
+}
+
+#pay-button:hover {
+  background-color: #01a9b4;
+  transition: ease 0.5s, padding 5s ease-out 0s;
+}
+
+/* стили для мобильных устройств*/
+@media (max-width: 500px) {
+  h1 {
+    margin: 10px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .container {
+    grid-template-columns: 20px repeat(3, 1fr) 20px;
+    grid-template-rows: 1fr repeat(4, 80px) 1fr;
+  }
+
+  .front {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .pay-system {
+    margin: 0;
+  }
+
+  .expiry {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .back {
+    grid-row: 4 / span 2;
+    grid-column: 2 / span 3;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .cvv {
+    grid-row: 2 / span 1;
+    margin: 0 10px 5px 0;
+  }
+
+  #cardNum {
+    width: 90%;
+  }
+
+  #name {
+    width: 90%;
+  }
+
+  #exMM,
+  #exYY {
+    font-size: 14px;
+    color: grey;
+    width: 20%;
+    height: 20%;
+    margin: 0 10px 10px 10px;
+  }
+
+  #exLabel {
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+
+  .container__submit-form {
+    margin: 10px;
+  }
+}
